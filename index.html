@@ -11,6 +11,8 @@ layout: page
 <div id="results">No image.</div>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@gradio/client@0.9.2/dist/index.min.js"></script>
 <script type="module">
+  import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
+
   async function loaded(reader) {
 
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");

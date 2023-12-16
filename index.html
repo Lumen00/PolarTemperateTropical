@@ -4,19 +4,19 @@ layout: page
 ---
 
 <!DOCTYPE html>
-import { client } from "@gradio/client";
 <html>
 <body>
   <h1>Upload an image of a polar, tropical, or temperate environment.</h1>
 <input id="photo" type="file">
 <div id="results"></div>
-<script>
+<script type="module">
+  import { client } from "@gradio/client";
 
   async function loaded(reader) {
 						
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
     const exampleImage = await response_0.blob();
-                
+    
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
     const result = await app.predict("/predict", [
             exampleImage, 	// blob in 'img' Image component

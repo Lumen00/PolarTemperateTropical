@@ -10,7 +10,7 @@ layout: page
 <div id="results"></div>
 <script>
   async function loaded(reader) {
-    const response = await fetch('"https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/"', {
+    const response = await fetch('"https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/predict"', {
       method: "POST", body: JSON.stringify({ "data": [reader.result] }),
       headers: { "Content-Type": "application/json" }
     });

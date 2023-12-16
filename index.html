@@ -10,13 +10,16 @@ layout: page
 <input id="photo" type="file">
 <div id="results">No image.</div>
 <script type="module">
-  gr = import("@gradio/client");
-  //import { client } from "@gradio/client";
+  import { client } from "@gradio/client";
   async function loaded(reader) {
 
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
     const exampleImage = await response_0.blob();
-                
+    
+    const app_info = await app.view_api();
+
+    console.log(app_info);
+
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/kwbdt/");
     const result = await app.predict("/predict", [
             exampleImage, 	// blob in 'img' Image component

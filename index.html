@@ -14,10 +14,15 @@ layout: page
   import { client } from "@gradio/client";
   async function loaded(reader) {
 						
+    const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
+    const exampleImage = await response_0.blob();
+                
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
     const result = await app.predict("/predict", [
-          reader 	// blob in 'img' Image component
-    ]);
+            exampleImage, 	// blob in 'img' Image component
+      ]);
+
+    console.log(result.data);
 
     const label = 'test'; //result['data'][0]['confidences'][0]['label'];
     results.innerHTML = `<br/><img src="${result}" width="300"> <p>${label}</p>`

@@ -8,18 +8,18 @@ layout: page
 <body>
   <h1>Upload an image of a polar, tropical, or temperate environment.</h1>
 <input id="photo" type="file">
-<div id="results"></div>
+<div id="results">No image.</div>
 <script src="https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js" type="module">
   import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
 
   async function loaded(reader) {
-						
+		results.innerHTML = "Result Pending..."
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
     const exampleImage = await response_0.blob();
     
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
     const result = await app.predict("/predict", [
-            reader, 	// blob in 'img' Image component
+            reader	// blob in 'img' Image component
       ]);
 
     console.log(result.data);

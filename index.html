@@ -5,20 +5,22 @@ layout: page
 
 <!DOCTYPE html>
 <html>
-
+<body>
+  Upload an image of a polar, tropical, or temperate environment.
+</body>
 <input id="photo" type="file">
 <div id="results"></div>
 <script>
   import { client } from "@gradio/client";
   async function loaded(reader) {
 						
-  const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
-  const result = await app.predict("/predict", [
-				reader, 	// blob in 'img' Image component
-	]);
+    const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
+    const result = await app.predict("/predict", [
+          reader, 	// blob in 'img' Image component
+    ]);
 
-    const label = result['data'][0]['confidences'][0]['label'];
-    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
+    const label = reader; //result['data'][0]['confidences'][0]['label'];
+    results.innerHTML = `<br/><img src="${result}" width="300"> <p>${label}</p>`
   }
   function read() {
     const reader = new FileReader();

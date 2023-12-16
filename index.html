@@ -9,9 +9,9 @@ layout: page
   <h1>Upload an image of a polar, tropical, or temperate environment.</h1>
 <input id="photo" type="file">
 <div id="results">No image.</div>
-<script>
+<script type="module">
   gr = import("@gradio/client");
-  import { client } from "@gradio/client";
+  //import { client } from "@gradio/client";
   async function loaded(reader) {
 
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");

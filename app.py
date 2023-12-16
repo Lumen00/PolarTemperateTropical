@@ -17,4 +17,4 @@ image = gr.Image(height=192, width=192)
 label = gr.Label()
 
 iface = gr.Interface(fn=predict, inputs=image, outputs=label)
-iface.launch(share=True)
+iface.queue.launch()

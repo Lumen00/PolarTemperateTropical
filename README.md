@@ -1,3 +1,10 @@
+This model built in fastai week 2 attempts to differentiate
+between the three zones of polar, tropical, and temperate
+around the world using images. This model is not wholly
+effective, but was used as a starting point to understand
+model deployment using Gradio, HuggingFace Spaces, GitHub
+Pages and FastAI.
+
 ---
 title: PolarTemperateTropical
 emoji: 🚀

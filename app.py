@@ -1,5 +1,5 @@
 import gradio as gr
-import fastais
+import fastai
 from fastai.vision.all import *
 
 # Load the model downloaded from Kaggle.

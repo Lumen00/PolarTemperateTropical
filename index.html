@@ -4,13 +4,13 @@ layout: page
 ---
 
 <!DOCTYPE html>
+import { client } from "@gradio/client";
 <html>
 <body>
   <h1>Upload an image of a polar, tropical, or temperate environment.</h1>
 <input id="photo" type="file">
 <div id="results"></div>
 <script>
-  import { client } from "@gradio/client";
 
   async function loaded(reader) {
 						

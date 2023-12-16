@@ -13,7 +13,7 @@ layout: page
   import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
 
   async function loaded(reader) {
-		results.innerHTML = "Result Pending..."
+		results.innerHTML = "Result Pending...";
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
     const exampleImage = await response_0.blob();
     
@@ -28,6 +28,7 @@ layout: page
     results.innerHTML = `<br/><img src="${result}" width="300"> <p>${label}</p>`
   }
   function read() {
+    results.innerHTML = "Image loading...";
     const reader = new FileReader();
     reader.addEventListener('load', () => loaded(reader))
     reader.readAsDataURL(photo.files[0]);

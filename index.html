@@ -10,7 +10,6 @@ layout: page
 <input id="photo" type="file">
 <div id="results">No image.</div>
 <script src="https://cdn.jsdelivr.net/npm/@gradio/client@0.9.2/dist/index.min.js">
-  import { client } from "@gradio/client";
   async function loaded(reader) {
 
     const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");

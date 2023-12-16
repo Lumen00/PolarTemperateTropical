@@ -23,8 +23,8 @@ layout: page
     //console.log(app_info);
 
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/kwbdt/");
-    const result = await app.predict("/predict", [
-            exampleImage, 	// blob in 'img' Image component
+    const result = await app.predict("predict", [
+            reader 	// blob in 'img' Image component
       ]);
 
     console.log(result.data);

@@ -19,7 +19,7 @@ layout: page
     
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/btqmv/");
     const result = await app.predict("/predict", [
-            exampleImage, 	// blob in 'img' Image component
+            reader, 	// blob in 'img' Image component
       ]);
 
     console.log(result.data);

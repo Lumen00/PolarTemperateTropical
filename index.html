@@ -27,10 +27,10 @@ layout: page
             reader 	// blob in 'img' Image component
       ]);
 
-    console.log(result);
+    await console.log(result);
 
     //results.innerHTML = result.data;
-    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
+    results.innerHTML = await `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
   }
 
   function read() {

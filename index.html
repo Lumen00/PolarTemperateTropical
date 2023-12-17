@@ -14,8 +14,8 @@ layout: page
   import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
 
   async function loaded(reader) {
-
-    const image = reader;
+    
+    const image = await reader;
     
     //const app_info = await app.view_api();
     

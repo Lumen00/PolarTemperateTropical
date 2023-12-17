@@ -30,13 +30,13 @@ layout: page
     //await console.log(result);
 
     //results.innerHTML = result.data;
-    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
   }
 
   function read() {
     results.innerHTML = "Image loading...";
     const reader = new FileReader();
     reader.addEventListener('load', () => loaded(reader))
+    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${result}</p>`    
     reader.readAsDataURL(photo.files[0]);
   }
   photo.addEventListener('input', read);

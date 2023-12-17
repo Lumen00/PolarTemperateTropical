@@ -16,7 +16,7 @@ layout: page
 
   async function loaded(reader) {
 
-    const image = await reader;
+    //const image = await reader;
     
     //const app_info = await app.view_api();
     
@@ -24,7 +24,7 @@ layout: page
     
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/whkl4/");
     const result = await app.predict("/predict", [
-            image 	// blob in 'img' Image component
+            reader 	// blob in 'img' Image component
       ]);
 
     console.log(result);

@@ -15,14 +15,15 @@ layout: page
 
   async function loaded(reader) {
 
-    const image = await reader.blob();
+    const response = await fetch(reader);
+    const image = await response.blob();
     
     //const app_info = await app.view_api();
     
     //console.log(app_info);
     
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/kwbdt/");
-    const result = await app.predict("/predict", [
+    const result = await client.predict("/predict", [
             image 	// blob in 'img' Image component
       ]);
 

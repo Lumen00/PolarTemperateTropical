@@ -15,19 +15,18 @@ layout: page
 
   async function loaded(reader) {
 
-    const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
-    const exampleImage = await response_0.blob();
+    const image = await reader.blob();
     
     //const app_info = await app.view_api();
-
+    
     //console.log(app_info);
-
+    
     const app = await client("https://lumen00-polartemperatetropical.hf.space/--replicas/kwbdt/");
     const result = await app.predict("/predict", [
-            reader 	// blob in 'img' Image component
+            image 	// blob in 'img' Image component
       ]);
 
-    console.log(result);
+    //console.log(result);
 
     //results.innerHTML = result.data;
     results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
